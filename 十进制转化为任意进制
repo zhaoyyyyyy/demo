@@ -1,0 +1,32 @@
+package text;
+
+public class text {
+	
+	public void transform(int num,int n) {
+		int arr[] = new int[100];
+		int i = 0;
+		while(num!=0) {
+			int remainder = num%n;
+			num = num/n;
+			arr[i] = remainder;
+			i++;
+		}
+		show(arr,i-1);
+	}
+	private void show(int[] a,int n) {
+		for(int i = n;i>=0;i--) {
+			if(a[i]>9) {
+				System.out.print((char)(a[i]+55));//转化为ascll码
+			}else {
+				System.out.print(a[i]+"");
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		text t = new text();
+		t.transform(19,8);
+	}
+
+}
